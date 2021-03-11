@@ -11,7 +11,7 @@ const useForm = () => {
     const [errors, setErrors] = useState({})
 
     const handleChange = (e) => {
-        const {name,value} = e.target
+        const { name ,value} = e.target;
         setValues ({
          ...values,
          [name]: value
@@ -19,13 +19,14 @@ const useForm = () => {
         })
     }  
 
-    const handleSubmit =(e) => {
-        e.preventDefault();
-
+    const handleSubmit =(event) => {
+        console.log("handelsubmit")
+        event.preventDefault()
+        
         setErrors(validateInfo(values))
     }
  
-   
+    console.log(errors)
     return {handleChange, values ,handleSubmit , errors}
 }
 

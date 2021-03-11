@@ -6,21 +6,22 @@ const Registration =() => {
 
     const {handleChange, values, handleSubmit,errors} = useForm(validateInfo)
 
+    console.log(errors)
     return (
         <div>
             <div className= "my-5">
                 <h1 className="text-center">Enter New Developer</h1>
             </div>
             
-            <div className="container " >
+            <div className="container text-left" >
                 <div className="row">
                     <div className="col-md-6 col-10 mx-auto">
                     
-                    <form onSubmit={handleSubmit} >
+                    <form onSubmit= { handleSubmit } >
                     
-                    <div class="mb-3">
+                    <div className="mb-3">
                     <label htmlFor="ename" 
-                    class="form-label">
+                    className="form-label">
                     Employee Name</label>
                      <input
                      type="text" 
@@ -30,11 +31,13 @@ const Registration =() => {
                      placeholder="Employee Name" 
                      value = {values.ename}
                      onChange={handleChange}/>
-                     {errors.ename && <p>{errors.ename}</p>}
+                      {/* {console.log(errors.errors)} */}
+                      <small className="effect">
+                     {errors.errors == undefined ? "" : <p>{errors.errors.ename}</p>}</small>
                     </div>
                     
 
-                    <div class="mb-3">
+                    <div className="mb-3">
                     <label htmlFor="email" 
                     className="form-label">Email address</label>
                     <input type="text" 
@@ -44,7 +47,9 @@ const Registration =() => {
                     value = {values.email}
                     onChange={handleChange}
                     placeholder="name@example.com" />
-                    {errors.email && <p>{errors.email}</p>}
+                     <small className="effect">
+                     {errors.errors == undefined ? "" : <p>{errors.errors.email}</p>}</small>
+                    {/* {errors.email && <p>{errors.email}</p>} */}
                     </div>
 
                     <div className="input-group mb-3">
@@ -52,12 +57,12 @@ const Registration =() => {
                      className="form-control" 
                      id="browse"
                      name="browse" />
-                     <label class="input-group-text" 
+                     <label className="input-group-text" 
                      htmlFor="browse">Upload</label> 
                     </div>
 
-                    <div class= "col-12">
-                    <button class=" btn btn-primary" type= "submit">Submit</button>
+                    <div className= "col-12">
+                    <button className=" btn btn-primary" type= "submit">Submit</button>
                     </div>
     
                 </form>
@@ -68,4 +73,4 @@ const Registration =() => {
     )
 }
 
-export default Registration
+export default Registration 

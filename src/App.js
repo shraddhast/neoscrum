@@ -6,9 +6,7 @@ import Registration from './Components.js/Registration';
 import Login  from './Components.js/Login';
 import Dashboard from './Components.js/Dashboard';
 
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link>
-
-
+{/* <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link> */}
 
 class App extends Component {
   render(){
@@ -17,12 +15,11 @@ class App extends Component {
       <>
       <Switch>
       
-      <Route exact path = "/"  component = {Registration} /> 
-      <Route exact path = "/login"  component={Login}/>
+      <Route exact path = "/"  component={Login}/>
+      <Route exact path = "/Registration"  component = {Registration} /> 
       <Route exact path = "/dashboard"  component={Dashboard}/>
-    
+ 
       </Switch>
-     
        </>
       </div>
     );

@@ -1,12 +1,12 @@
-
 export default function validateInfo(values){
 
     let errors = {}
-
-    if(values.ename === "") {
+ 
+    console.log(values)
+    if(values.ename == "") {
          errors.ename= "Name required"
      }
-     else if (!/^[A-Za-z]+$/.test(values.ename)){
+     else if (! /^[A-Za-z]+$/.test(values.ename)){
         errors.ename = "Only Alphabets are allowed" 
      }
     
@@ -16,10 +16,10 @@ export default function validateInfo(values){
      {
          errors.email = "Not a valid Email" 
      }
-     if(values.password === ""){
+     if(values.password == ""){
          errors.password ="Enter Password"
      }
-    
+     console.log(errors)
      return {errors};
 }
 
