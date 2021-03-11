@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { Route, Switch } from 'react-router-dom';
+import Registration from './Components.js/Registration';
+import Login  from './Components.js/Login';
+import Dashboard from './Components.js/Dashboard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link>
+
+
+
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+      <>
+      <Switch>
+      
+      <Route exact path = "/"  component = {Registration} /> 
+      <Route exact path = "/login"  component={Login}/>
+      <Route exact path = "/dashboard"  component={Dashboard}/>
+    
+      </Switch>
+     
+       </>
+      </div>
+    );
+  }
+
+  }
+  
 
 export default App;

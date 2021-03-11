@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,39 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.input-container{
+  width: 100%;
+  margin: 0px, 10px;
+  display: flex;
+  align-items: center;
+  border :1px solid rgb(201, 199, 199);
+  border-radius: 5px;
+}
+.input-container input {
+  width:100%;
+}
+
+i{
+  margin: 0px, 10px;
+}
+
+.button1{
+  background-color:blue;
+  color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+ }
+
+.button2{
+ background-color: red;
+ color: white;
+ border-radius: 5px; 
+}
+
+.image{
+  height: 50px;
+  border-radius: 25%;
+  
 }
