@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* @import url('https://fonts.googleapis.com/icon?family=Material+Icons'); */
 
 body {
   margin: 0;
@@ -24,11 +24,12 @@ code {
 }
 .input-container input {
   width:100%;
+  
 }
 
-i{
+/* i{
   margin: 0px, 10px;
-}
+} */
 
 .button1{
   background-color:blue;
@@ -46,5 +47,18 @@ i{
 .image{
   height: 50px;
   border-radius: 25%;
-  
+  }
+
+.crd{
+  margin: 10%;
+}
+.card-title{
+  background-color: chartreuse;
+}
+.effect{
+  color: red;
+}
+
+.noti{
+  color: red;
 }
