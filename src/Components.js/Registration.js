@@ -55,10 +55,11 @@ const Registration =() => {
                     <div className="input-group mb-3">
                      <input type="file" 
                      className="form-control" 
+                     accept=" .jpg, .jpeg"
                      id="browse"
                      name="browse" />
-                     <label className="input-group-text" 
-                     htmlFor="browse">Upload</label> 
+                     {/* <label className="input-group-text" 
+                     htmlFor="browse">Upload</label>  */}
                     </div>
 
                     <div className= "col-12">

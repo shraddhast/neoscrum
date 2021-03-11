@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Registration from './Components.js/Registration';
 import Login  from './Components.js/Login';
 import Dashboard from './Components.js/Dashboard';
+import Addfeedback from './Components.js/Addfeedback'
 
 {/* <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link> */}
 
@@ -18,6 +19,8 @@ class App extends Component {
       <Route exact path = "/"  component={Login}/>
       <Route exact path = "/Registration"  component = {Registration} /> 
       <Route exact path = "/dashboard"  component={Dashboard}/>
+      <Route exact path = "/Addfeedback"  component={Addfeedback}/>
+
  
       </Switch>
        </>

@@ -16,7 +16,10 @@ function Dashboard() {
             src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" />
 
             <div class="col-justify-right ">
+
+            <Link to ="./Addfeedback">  
             <button class="button1" type="button" >Add Feedback</button>
+            </Link>
             <Link to ="./">
             <button class="button2" type="button" > Logout</button>
             </Link>
