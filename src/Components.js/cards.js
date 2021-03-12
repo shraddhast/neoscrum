@@ -2,8 +2,7 @@ import React from 'react'
 
 function Cards(props) {
 
-    return (
-    <>
+    return (<>
    
         <div className='col-md-4 col-sm-6  '>
         <div class="card-group crd">
