@@ -69,6 +69,7 @@ const Registration =() => {
 
                     <br/>
                     <div className= "col-12">
+                        <p className="noti">If already registered then</p>
                         <Link to = "./">
                         <button className=" btn btn-primary" type= "submit">Login</button>
                          </Link>

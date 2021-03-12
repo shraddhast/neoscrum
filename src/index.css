@@ -58,7 +58,9 @@ code {
   }
 .title{
   background-color: chartreuse;
+  padding: 2%;
 }
+
 .effect{
   color: red;
 }
