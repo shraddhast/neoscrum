@@ -2,9 +2,16 @@ import React from 'react'
 import Navbar from './Navbar'
 import { useState } from 'react'
 import Addfeedbackdata from './Addfeedbackdata'
+import { counter } from '@fortawesome/fontawesome-svg-core'
 
 export default function Addfeedback(props) {
     
+    const [count, setcount] = useState('')
+
+    const handlecount= (e)=>{
+        setcount(e.target.value)
+    }
+
     return (<>
 
         <div className='col-md-4 col-sm-6  '>
@@ -15,16 +22,26 @@ export default function Addfeedback(props) {
                 <p className="card-text">
                     
                 <img class="img-responsive2 image"  
-                src={props.image} />
-                   
-                </p>
+                src={props.image} /></p>
 
+                <p className="card-text">{props.name}</p>
 
-                {/* <img class="img-responsive2 image"  
-                src="https://p.kindpng.com/picc/s/78-786555_woman-doctor-icon-png-clipart-png-download-female.png" />
-                <p className="card-text-justify-left">{props.name}</p> */}
-               <textarea maxLength="100"> </textarea>
-                <p class="card-text"><small class="text-muted">max 100 letters</small></p>
+               {/* <textarea 
+               maxLength={100}
+               value={count}
+               onChange={handlecount} 
+               className="textarea" > </textarea> */}
+             
+               <div class="textarea__wrapper"
+                maxLength={100}
+                value={count}
+                onChange={handlecount} >
+                 <textarea />
+                <span class="textarea__count">{count.length}/100</span>
+                </div>
+
+                <p class="card-text maxchar_mssg"><small class="text-muted">max 100 letters</small></p>
+
                 <a href="#" class="btn btn-primary">Submit Feedback</a>
                 </div>
             </div>
