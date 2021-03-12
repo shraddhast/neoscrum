@@ -1,7 +1,7 @@
 const feedback = [
     {
         name: "Siddhi Martal",
-        review: "Nice work "
+        review: "Your program was very understandable "
     },
     {
         name: "Vishal yadav",

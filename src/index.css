@@ -51,8 +51,12 @@ code {
 
 .crd{
   margin: 10%;
-}
-.card-title{
+  }
+  .body{
+    margin-top: 10%;
+    height: 150px;
+  }
+.title{
   background-color: chartreuse;
 }
 .effect{

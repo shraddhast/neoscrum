@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import useForm from './useForm';
 import validateInfo from './validateInfo'
 
@@ -65,6 +66,14 @@ const Registration =() => {
                     <div className= "col-12">
                     <button className=" btn btn-primary" type= "submit">Submit</button>
                     </div>
+
+                    <br/>
+                    <div className= "col-12">
+                        <Link to = "./">
+                        <button className=" btn btn-primary" type= "submit">Login</button>
+                         </Link>
+                    </div>
+
     
                 </form>
             </div>

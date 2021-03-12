@@ -40,7 +40,8 @@ const Login = ()=> {
                     name="email"
                     value = {values.email}
                     onChange={handleChange}
-                    placeholder="name@example.com" />
+                    placeholder="name@example.com"
+                    onkeyup="clearErrors()" />
                     <small className="effect">
                     {errors.errors == undefined ? "" : <p>{errors.errors.email}</p>}</small>
                     {/* {errors.email && <p>{errors.email}</p>} */}
@@ -70,14 +71,14 @@ const Login = ()=> {
                     <button class=" btn btn-primary" type= "submit">Login</button>
                     </div>
 
-                    <p className="noti">
-                        Are you a new user? If yes then</p>
+                    <div> <br/> <p className="noti">
+                        Are you a new user? If yes then </p>
 
-                    <div class= "col-12">
+                         <div class= "col-12">
                         <Link to = "./Registration" >
-                        <button class=" btn btn-primary" type= "submit"> Signup </button>
-                        </Link>
-                    
+                        <button class=" btn btn-primary" type= "submit"> Signup </button> 
+                        </Link> 
+                        </div>
                     </div>
                 </form>
             </div>

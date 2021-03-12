@@ -8,8 +8,12 @@ export default function Addfeedback() {
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">FeedBack</h5>
-                <p className="card-text" type="textarea">hello</p>
+                <img class="img-responsive2 image"  
+            src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" />
+
+                <p className="card-text">Bhavna</p>
                 <p class="card-text"><small class="text-muted">muted</small></p>
+                <a href="#" class="btn btn-primary">Submit Feedback</a>
                 </div>
             </div>
         </div>
