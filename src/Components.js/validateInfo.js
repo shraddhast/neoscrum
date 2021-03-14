@@ -19,6 +19,10 @@ export default function validateInfo(values){
      if(values.password == ""){
          errors.password ="Enter Password"
      }
+     if((values.password.length <= 8) || (values.password.length > 12)){
+        errors.password ="Password length should be between 8-12"
+
+     }
      console.log(errors)
      return {errors};
 }

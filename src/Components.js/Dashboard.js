@@ -11,7 +11,7 @@ function Dashboard() {
             <div>
             <Navbar />
             
-            <div class='row'>{
+            <div class='row text-left' >{
 
                 feedback.map((value,index)=> {
                      return <Cards name={value.name} review={value.review}  />
