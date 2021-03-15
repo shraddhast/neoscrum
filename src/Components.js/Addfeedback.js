@@ -36,11 +36,15 @@ export default function Addfeedback(props) {
                 maxLength={100}
                 value={count}
                 onChange={handlecount} >
-                 <textarea />
-                <span class="textarea__count">{count.length}/100</span>
-                </div>
+                <textarea /><br/>
+                  
+                  <span class="textarea__count">
+                   <small class="text-muted"><pre > max 100 letters     {count.length}/100  </pre>
+                  </small></span>
+                  
+                   </div>
 
-                <p class="card-text maxchar_mssg"><small class="text-muted">max 100 letters</small></p>
+                {/* <p class="card-text maxchar_mssg"><small class="text-muted">max 100 letters</small></p> */}
 
                 <a href="#" class="btn btn-primary">Submit Feedback</a>
                 </div>

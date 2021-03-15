@@ -3,12 +3,14 @@ import useForm from './useForm';
 import Registration from './Registration'
 import validateInfo from './validateInfo'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";  
+import { faEyeSlash} from "@fortawesome/free-solid-svg-icons";  
 import { Link } from 'react-router-dom';
 
 const Login = ()=> {
 
     const eye = <FontAwesomeIcon icon={faEye} />;
+   const eyeslash = <FontAwesomeIcon icon={faEyeSlash} />;
     const {handleChange, values, handleSubmit,errors} = useForm(validateInfo)
 
     const [passwordShown, setPasswordShown] = useState(false);
@@ -60,7 +62,7 @@ const Login = ()=> {
                     value = {values.password}
                     onChange={handleChange}
                     placeholder="Password" />
-                     <i onClick={togglePassword}>{eye}</i>
+                     <i onClick={togglePassword}>{passwordShown ? eyeslash : eye}</i>
                     </div>
                     <small className="effect">
                     {errors.errors == undefined ? "" : <p>{errors.errors.password}</p>}</small>
