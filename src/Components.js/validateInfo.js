@@ -2,7 +2,6 @@ export default function validateInfo(values){
 
     let errors = {}
  
-    console.log(values)
     if(values.ename == "") {
          errors.ename= "Name required"
      }
@@ -19,11 +18,13 @@ export default function validateInfo(values){
      if(values.password == ""){
          errors.password ="Enter Password"
      }
-     if((values.password.length <= 8) || (values.password.length > 12)){
+     else if((values.password.length <= 8) || (values.password.length > 12)){
         errors.password ="Password length should be between 8-12"
+    }
+    else if(!/^(?=.*\d)(?=.*[a-z]).{4,14}$/.test(values.password)){
+    errors.password = "Password should be Alphanumeric"
+    }
 
-     }
-     console.log(errors)
      return {errors};
 }
 

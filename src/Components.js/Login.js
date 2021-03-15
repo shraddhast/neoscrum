@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";  
 import { faEyeSlash} from "@fortawesome/free-solid-svg-icons";  
 import { Link } from 'react-router-dom';
-
+import {useHistory} from 'react-router-dom'
 const Login = ()=> {
 
     const eye = <FontAwesomeIcon icon={faEye} />;
@@ -15,10 +15,18 @@ const Login = ()=> {
 
     const [passwordShown, setPasswordShown] = useState(false);
 
-
     const togglePassword = () => {
         setPasswordShown(passwordShown ? false : true);
       };
+
+     const history =  useHistory()
+    const handleLogin =() =>{
+        const Email="abc@gmail.com";
+        const Password = "abc123456"
+        if(Email == values.email && Password == values.password){
+            history.push('./dashboard')
+        }
+    }
     
 
     return (
@@ -70,7 +78,8 @@ const Login = ()=> {
                     </div>
 
                     <div class= "col-12">
-                    <button class=" btn btn-primary" type= "submit">Login</button>
+                    <button class=" btn btn-primary" type= "submit"
+                    onClick={handleLogin}>Login</button>
                     </div>
 
                     <div> <br/> <p className="noti">

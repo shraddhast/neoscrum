@@ -5,6 +5,7 @@ function Navbar() {
     return (
         <div>
             
+            <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
             <img class="img-responsive2 image"  
@@ -21,8 +22,10 @@ function Navbar() {
             </div>
             </div>
             </nav>
+            </div>
 
-        </div>
+
+</div>
     )
 }
 

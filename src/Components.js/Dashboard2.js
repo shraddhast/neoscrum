@@ -7,7 +7,7 @@ function Dashboard2() {
     return (
         <div>
             <Navbar/>
-            
+        
             <div class='row'>{
 
                 Addfeedbackdata.map((value,index)=> {

@@ -17,6 +17,7 @@ const useForm = () => {
          [name]: value
         
         })
+       
     }  
 
     const handleSubmit =(event) => {
@@ -26,7 +27,6 @@ const useForm = () => {
         setErrors(validateInfo(values))
     }
  
-    console.log(errors)
     return {handleChange, values ,handleSubmit , errors}
 }
 

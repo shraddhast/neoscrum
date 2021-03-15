@@ -37,11 +37,18 @@ export default function Addfeedback(props) {
                 value={count}
                 onChange={handlecount} >
                 <textarea /><br/>
+        
+                  <div className="row">
+                  <div className="col-8 text-left">
+                        <span class="textarea__count">
+                        <small class="text-muted"> max 100 letters
+                        </small></span>
+                  </div> 
+                   <div className="col text-right">
+                   <small class="text-muted">  {count.length}/100 </small>
+                    </div>
                   
-                  <span class="textarea__count">
-                   <small class="text-muted"><pre > max 100 letters     {count.length}/100  </pre>
-                  </small></span>
-                  
+                  </div>
                    </div>
 
                 {/* <p class="card-text maxchar_mssg"><small class="text-muted">max 100 letters</small></p> */}
