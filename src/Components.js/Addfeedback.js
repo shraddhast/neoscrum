@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import { useState } from 'react'
 import Addfeedbackdata from './Addfeedbackdata'
-import { counter } from '@fortawesome/fontawesome-svg-core'
+
 
 export default function Addfeedback(props) {
     
