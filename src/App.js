@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
 import { Route, Switch } from 'react-router-dom';
 import Registration from './Components.js/Registration';
 import Login  from './Components.js/Login';
