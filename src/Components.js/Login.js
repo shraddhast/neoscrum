@@ -23,7 +23,7 @@ const Login = ()=> {
     const handleLogin =() =>{
         const Email="abc@gmail.com";
         const Password = "abc123456"
-        if(Email == values.email && Password == values.password){
+        if(Email === values.email && Password === values.password){
             history.push('./dashboard')
         }
     }

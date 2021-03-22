@@ -11,7 +11,7 @@ const Registration =() => {
     return (
         <div>
             <div className= "my-5">
-                <h1 className="text-center">Enter New Developer</h1>
+                 <h1 className="text-center">Enter New Developer</h1>
             </div>
             
             <div className="container text-left" >

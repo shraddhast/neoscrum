@@ -25,6 +25,7 @@ const useForm = () => {
         event.preventDefault()
         
         setErrors(validateInfo(values))
+        
     }
  
     return {handleChange, values ,handleSubmit , errors}

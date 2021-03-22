@@ -7741,6 +7741,11 @@
   dependencies:
     "path-key" "^3.0.0"
 
+"npm-start-command@^1.0.1":
+  "integrity" "sha512-EEh74E7MYd0+3IUPxZbTHj4nB9yN+XYfJ6CJ2uiXAg+70DRUnYOyq15iy8T6G0tieihcFrjyE/+BkV/OOtY9VA=="
+  "resolved" "https://registry.npmjs.org/npm-start-command/-/npm-start-command-1.0.1.tgz"
+  "version" "1.0.1"
+
 "nth-check@^1.0.2":
   "integrity" "sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg=="
   "resolved" "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.2.tgz"
