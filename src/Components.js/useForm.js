@@ -1,8 +1,11 @@
+
 import {useState , useEffect} from 'react'
 import validateInfo from './validateInfo'
 
 const useForm = () => {
     const [values, setValues] = useState({
+        Loginemail:'',
+        Loginpassword:'',
         ename:'' ,
         email:'',
         password: ''

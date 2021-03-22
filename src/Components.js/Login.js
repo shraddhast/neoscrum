@@ -10,7 +10,7 @@ import {useHistory} from 'react-router-dom'
 const Login = ()=> {
 
     const eye = <FontAwesomeIcon icon={faEye} />;
-   const eyeslash = <FontAwesomeIcon icon={faEyeSlash} />;
+    const eyeslash = <FontAwesomeIcon icon={faEyeSlash} />;
     const {handleChange, values, handleSubmit,errors} = useForm(validateInfo)
 
     const [passwordShown, setPasswordShown] = useState(false);
@@ -20,10 +20,10 @@ const Login = ()=> {
       };
 
      const history =  useHistory()
-    const handleLogin =() =>{
+     const handleLogin =() =>{
         const Email="abc@gmail.com";
         const Password = "abc123456"
-        if(Email === values.email && Password === values.password){
+        if(Email === values.Loginemail && Password === values.Loginpassword){
             history.push('./dashboard')
         }
     }
@@ -47,13 +47,13 @@ const Login = ()=> {
                     <input type="text" 
                     className="form-control noti" 
                     id="email"
-                    name="email"
-                    value = {values.email}
+                    name="Loginemail"
+                    value = {values.Loginemail}
                     onChange={handleChange}
                     placeholder="name@example.com"
                     onkeyup="clearErrors()" />
                     <small className="effect">
-                    {errors.errors == undefined ? "" : <p>{errors.errors.email}</p>}</small>
+                    {errors.errors == undefined ? "" : <p>{errors.errors.Loginemail}</p>}</small>
                     {/* {errors.email && <p>{errors.email}</p>} */}
                     </div>
 
@@ -66,14 +66,14 @@ const Login = ()=> {
                     type={passwordShown ? "text" : "password"} 
                     className="form-control " 
                     id="password"
-                    name="password"
-                    value = {values.password}
+                    name="Loginpassword"
+                    value = {values.Loginpassword}
                     onChange={handleChange}
                     placeholder="Password" />
-                     <i onClick={togglePassword}>{passwordShown ? eyeslash : eye}</i>
+                    <i onClick={togglePassword}>{passwordShown ? eyeslash : eye}</i>
                     </div>
                     <small className="effect">
-                    {errors.errors == undefined ? "" : <p>{errors.errors.password}</p>}</small>
+                    {errors.errors == undefined ? "" : <p>{errors.errors.Loginpassword}</p>}</small>
                     {/* {errors.password && <p>{errors.password}</p>} */}
                     </div>
 
@@ -85,7 +85,7 @@ const Login = ()=> {
                     <div> <br/> <p className="noti">
                         Are you a new user? If yes then </p>
 
-                         <div class= "col-12">
+                        <div class= "col-12">
                         <Link to = "./Registration" >
                         <button class=" btn btn-primary" type= "submit"> Signup </button> 
                         </Link> 
@@ -101,6 +101,4 @@ const Login = ()=> {
 }
 
 export default Login
-
-   
 
