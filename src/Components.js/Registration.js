@@ -1,13 +1,51 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import useForm from './useForm';
 import validateInfo from './validateInfo'
 
+
 const Registration =() => {
 
-    const {handleChange, values, handleSubmit,errors} = useForm(validateInfo)
+    //const {handleChange, values, handleSubmit,errors} = useForm(validateInfo)
 
-    console.log(errors)
+    const [values, setValues] = useState({
+        ename:'' ,
+        email:''
+   })
+
+    const [error, setError] = useState({})
+
+    const handleChange = (e) => {
+        const { name ,value} = e.target;
+        setValues ({
+         ...values,
+         [name]: value
+        
+        })
+    }  
+
+    const setData =()=> {
+
+        const user = JSON.parse(localStorage.getItem("user") || "[]");
+        user.push(values)
+        localStorage.setItem('user',JSON.stringify(user))
+
+        for(let i=0; i<user; i++){
+            //const user = JSON.parse(localStorage.getItem("user") || "[]");
+            if(user=== [])
+            {
+                alert('already existing user')
+            }
+        }
+   }
+
+    const handleSubmit =(event) => {
+        event.preventDefault()
+        
+        setError(validateInfo(values))
+        setData();
+ }
+
     return (
         <div>
             <div className= "my-5">
@@ -34,7 +72,7 @@ const Registration =() => {
                      onChange={handleChange}/>
                       {/* {console.log(errors.errors)} */}
                       <small className="effect">
-                     {errors.errors == undefined ? "" : <p>{errors.errors.ename}</p>}</small>
+                     {error.errors == undefined ? "" : <p>{error.errors.ename}</p>}</small>
                     </div>
                     
 
@@ -49,7 +87,7 @@ const Registration =() => {
                     onChange={handleChange}
                     placeholder="name@example.com" />
                      <small className="effect">
-                     {errors.errors == undefined ? "" : <p>{errors.errors.email}</p>}</small>
+                     {error.errors == undefined ? "" : <p>{error.errors.email}</p>}</small>
                     {/* {errors.email && <p>{errors.email}</p>} */}
                     </div>
 
@@ -63,12 +101,12 @@ const Registration =() => {
                      htmlFor="browse">Upload</label>  */}
                     </div>
 
-                    <div className= "col-12">
+                    <div className= "mb-3">
                     <button className=" btn btn-primary" type= "submit">Submit</button>
                     </div>
 
-                    <br/>
-                    <div className= "col-12">
+                    
+                    <div className= "mb-3">
                         <p className="noti">If already registered then</p>
                         <Link to = "./">
                         <button className=" btn btn-primary" type= "submit">Login</button>

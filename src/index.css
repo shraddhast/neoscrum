@@ -14,10 +14,27 @@ code {
     monospace;
 }
 
-@media (min-width: 600px) and (max-width:1050px) {
+@media (min-width: 570px) and (max-width:1050px) {
   .text, .button2{
     width : 75%;
   }
+ }
+ @media (min-width: 760px) and (max-width:900px) {
+  .bn{
+    font-size: x-small;
+  }
+  .tm{
+    font-size: xx-small;
+  }
+ }
+
+
+ /* @media (min-width: 570px) and (max-width:610px) {
+  .text, .button2{
+    width : 75%;
+  }
+ } */
+
   /* .login_Container {
     margin-top: 30%;
   }
@@ -32,7 +49,7 @@ code {
     width: 150px;
     margin-bottom: 10px;
   } */
-}
+
 .input-container{
   
   display: flex;

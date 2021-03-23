@@ -41,11 +41,11 @@ export default function Addfeedback(props) {
                   <div className="row">
                   <div className="col-8 text-left">
                         <span class="textarea__count">
-                        <small class="text-muted"> max 100 letters
+                        <small class="text-muted tm"> max 100 letters
                         </small></span>
                   </div> 
                    <div className="col text-right">
-                   <small class="text-muted">  {count.length}/100 </small>
+                   <small class="text-muted tm">  {count.length}/100 </small>
                     </div>
                   
                   </div>

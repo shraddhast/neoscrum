@@ -11,7 +11,31 @@ const Login = ()=> {
 
     const eye = <FontAwesomeIcon icon={faEye} />;
     const eyeslash = <FontAwesomeIcon icon={faEyeSlash} />;
-    const {handleChange, values, handleSubmit,errors} = useForm(validateInfo)
+   // const {handleChange, values, handleSubmit,errors} = useForm(validateInfo)
+
+    const [values, setValues] = useState({
+        Loginemail:'',
+        Loginpassword:''
+   })
+
+    const [error, setError] = useState({})
+
+    const handleChange = (e) => {
+        const { name ,value} = e.target;
+        setValues ({
+         ...values,
+         [name]: value
+        
+        })
+       
+    }  
+
+    const handleSubmit =(event) => {
+        event.preventDefault()
+        
+        setError(validateInfo(values))
+    }
+        
 
     const [passwordShown, setPasswordShown] = useState(false);
 
@@ -27,7 +51,6 @@ const Login = ()=> {
             history.push('./dashboard')
         }
     }
-    
 
     return (
         <div>
@@ -53,7 +76,7 @@ const Login = ()=> {
                     placeholder="name@example.com"
                     onkeyup="clearErrors()" />
                     <small className="effect">
-                    {errors.errors == undefined ? "" : <p>{errors.errors.Loginemail}</p>}</small>
+                    {error.errors == undefined ? "" : <p>{error.errors.Loginemail}</p>}</small>
                     {/* {errors.email && <p>{errors.email}</p>} */}
                     </div>
 
@@ -73,19 +96,19 @@ const Login = ()=> {
                     <i onClick={togglePassword}>{passwordShown ? eyeslash : eye}</i>
                     </div>
                     <small className="effect">
-                    {errors.errors == undefined ? "" : <p>{errors.errors.Loginpassword}</p>}</small>
+                    {error.errors == undefined ? "" : <p>{error.errors.Loginpassword}</p>}</small>
                     {/* {errors.password && <p>{errors.password}</p>} */}
                     </div>
 
-                    <div class= "col-12">
-                    <button class=" btn btn-primary" type= "submit"
+                    <div class= "mb-3">
+                    <button class=" btn btn-primary align-center" type= "submit"
                     onClick={handleLogin}>Login</button>
                     </div>
 
-                    <div> <br/> <p className="noti">
+                    <div> <p className="noti">
                         Are you a new user? If yes then </p>
 
-                        <div class= "col-12">
+                        <div class= "mb-3">
                         <Link to = "./Registration" >
                         <button class=" btn btn-primary" type= "submit"> Signup </button> 
                         </Link> 
