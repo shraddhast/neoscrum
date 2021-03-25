@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import useForm from './useForm';
 import validateInfo from './validateInfo'
@@ -13,6 +13,7 @@ const Registration =() => {
         email:''
    })
 
+
     const [error, setError] = useState({})
 
     const handleChange = (e) => {
@@ -20,29 +21,52 @@ const Registration =() => {
         setValues ({
          ...values,
          [name]: value
-        
+         
         })
     }  
 
+
     const setData =()=> {
 
-        const user = JSON.parse(localStorage.getItem("user") || "[]");
-        user.push(values)
-        localStorage.setItem('user',JSON.stringify(user))
-
-        for(let i=0; i<user; i++){
-            //const user = JSON.parse(localStorage.getItem("user") || "[]");
-            if(user=== [])
-            {
-                alert('already existing user')
+      const user = JSON.parse(localStorage.getItem("user") || "[]");
+      const userlist = [...user]
+        
+         if(userlist.length === 0){
+             userlist.push(values)
+            localStorage.setItem('user',JSON.stringify(userlist))
             }
-        }
-   }
+            else{
+                let newlist = userlist.filter((val)=>{
+                    return val.email == values.email
+                    
+                })
+                console.log(newlist)
+                if(newlist.length !== 0 ){
+                    alert("alreay existing email")}
+                else{
+                    userlist.push(values)
+                    localStorage.setItem("user",JSON.stringify(userlist))
+                }
+            }
+}
+
+// for(let i=0; i<user.length; i++){
+                //             if(user[i] === values.email){
+                //                  alert('already existing user')
+                //                  break;
+                //              }
+                //             else{
+                //                   user.push(values)
+                //                  localStorage.setItem('user',JSON.stringify(user))   
+                //              }   
+                //          }
 
     const handleSubmit =(event) => {
         event.preventDefault()
         
         setError(validateInfo(values))
+        //validateuser() ;
+       // console.log('handleChange',values)
         setData();
  }
 
@@ -56,7 +80,7 @@ const Registration =() => {
                 <div className="row">
                     <div className="col-md-6 col-10 mx-auto">
                     
-                    <form onSubmit= { handleSubmit } >
+                    <form onSubmit={handleSubmit}>
                     
                     <div className="mb-3">
                     <label htmlFor="ename" 
@@ -102,7 +126,7 @@ const Registration =() => {
                     </div>
 
                     <div className= "mb-3">
-                    <button className=" btn btn-primary" type= "submit">Submit</button>
+                    <button className=" btn btn-primary" type="submit">Submit</button>
                     </div>
 
                     
