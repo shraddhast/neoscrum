@@ -1,7 +1,6 @@
 import React,{ useState } from 'react'
-import useForm from './useForm';
-import Registration from './Registration'
-import validateInfo from './validateInfo'
+import useForm from '../useForm';
+import validateInfo from '../validateInfo'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";  
 import { faEyeSlash} from "@fortawesome/free-solid-svg-icons";  
@@ -42,17 +41,31 @@ const Login = ()=> {
         setPasswordShown(passwordShown ? false : true);
       };
 
-     const history =  useHistory()
-     const handleLogin =() =>{
-        const Email="abc@gmail.com";
+      const history =  useHistory()
+    
+      const handleLogin =() =>{
+
+        const user = JSON.parse(localStorage.getItem("user"));
+        const userlist = [...user]
+        
+        let list = userlist.filter((val)=>{
+            return val.email === values.Loginemail
+        })
+        // console.log(list)
         const Password = "abc123456"
-        if(Email === values.Loginemail && Password === values.Loginpassword){
-            history.push('./dashboard')
+        if((list.length !== 0) && (values.Loginpassword === Password)){
+            localStorage.setItem("isLoggedin",true)
+            //const isLoggedin = JSON.parse(localStorage.getItem("isLoggedin"));
+            //console.log(isLoggedin)
+            history.push('./dashboard')     
+        }
+        else {
+                 alert("Not a registered user. Please register signup")
         }
     }
 
     return (
-        <div>
+        <div className="Login">
              <div className= "my-5">
                 <h1 className="text-center">Login</h1>
             </div>
@@ -61,7 +74,7 @@ const Login = ()=> {
                 <div className="row">
                     <div className="col-md-6 col-10 mx-auto">
                     
-                    <form onSubmit ={handleSubmit}>
+                    <form className="form" onSubmit ={handleSubmit}>
                     
                     <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
@@ -100,7 +113,7 @@ const Login = ()=> {
                     </div>
 
                     <div class= "mb-3">
-                    <button class=" btn btn-primary align-center" type= "submit"
+                    <button class=" btn btn-primary align-center" type="submit"
                     onClick={handleLogin}>Login</button>
                     </div>
 
@@ -108,7 +121,7 @@ const Login = ()=> {
                         Are you a new user? If yes then </p>
 
                         <div class= "mb-3">
-                        <Link to = "./Registration" >
+                        <Link to = "./Registration1" >
                         <button class=" btn btn-primary" type= "submit"> Signup </button> 
                         </Link> 
                         </div>

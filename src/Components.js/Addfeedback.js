@@ -1,10 +1,25 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Addfeedbackdata from './Addfeedbackdata'
+import {useHistory} from 'react-router-dom'
 
 
 export default function Addfeedback(props) {
+
+    const isLoggedin = JSON.parse(localStorage.getItem("isLoggedin"));
+    //console.log(isLoggedin)
+
+    const history = useHistory()
+    useEffect(() => {
+        if(isLoggedin){
+            history.push("./Dashboard2")
+        }
+        else{
+            history.push("./")
+        }
+        
+    }, [isLoggedin])
     
     const [count, setcount] = useState('')
 

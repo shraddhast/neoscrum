@@ -1,34 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useHistory} from 'react-router-dom'
 
 function Navbar() {
-    return (
-        <div>
-            
-            {/* <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-            <img class="img-responsive2 image"  
-            src="https://p.kindpng.com/picc/s/78-786555_woman-doctor-icon-png-clipart-png-download-female.png" />
-            
-            <div class="col-justify-right ">
 
-            <Link to ="./Dashboard2">  
-            <button class="button1" type="button" >Add Feedback</button>
-            </Link>
-            <Link to ="./">
-            <button class="button2" type="button" > Logout</button>
-            </Link>
-           
-            </div>
+  const history = useHistory()
 
-            </div>
-            </nav>
-            </div> */}
+  const handlelogout = () => {
+    localStorage.setItem("isLoggedin",false)
+    //const isLoggedin = JSON.parse(localStorage.getItem("isLoggedin"));
+    //console.log(isLoggedin)
+    history.push("./")
+    
+  }
+    return (               
 
-<div>
+<div >
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bar">
     <img class="img-responsive2 image"  
     src="https://p.kindpng.com/picc/s/78-786555_woman-doctor-icon-png-clipart-png-download-female.png" />
            
@@ -45,18 +33,17 @@ function Navbar() {
         </Link>
       </li>
       <li className="nav-item">
-         <Link to ="./">
-            <button class="button2" type="button" > Logout</button>
-          </Link>
+         
+            <button class="button2"  onClick={handlelogout}> Logout</button>
+          
       </li>
 
     </ul>
    </div>
 
-</nav>
+  </nav>
 </div>
-
-        </div>
+      
     )
 }
 

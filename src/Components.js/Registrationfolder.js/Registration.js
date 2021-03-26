@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-import useForm from './useForm';
-import validateInfo from './validateInfo'
+//import useForm from '../useForm';
+import validateInfo from '../validateInfo'
 
 
 const Registration =() => {
@@ -42,31 +42,19 @@ const Registration =() => {
                 })
                 console.log(newlist)
                 if(newlist.length !== 0 ){
-                    alert("alreay existing email")}
+                    alert("Email not enteered or already registered email")}
                 else{
                     userlist.push(values)
                     localStorage.setItem("user",JSON.stringify(userlist))
+                    alert("Registration done sucessfully")
                 }
             }
 }
-
-// for(let i=0; i<user.length; i++){
-                //             if(user[i] === values.email){
-                //                  alert('already existing user')
-                //                  break;
-                //              }
-                //             else{
-                //                   user.push(values)
-                //                  localStorage.setItem('user',JSON.stringify(user))   
-                //              }   
-                //          }
 
     const handleSubmit =(event) => {
         event.preventDefault()
         
         setError(validateInfo(values))
-        //validateuser() ;
-       // console.log('handleChange',values)
         setData();
  }
 
@@ -80,7 +68,7 @@ const Registration =() => {
                 <div className="row">
                     <div className="col-md-6 col-10 mx-auto">
                     
-                    <form onSubmit={handleSubmit}>
+                    <form className="form" onSubmit={handleSubmit}>
                     
                     <div className="mb-3">
                     <label htmlFor="ename" 

@@ -6,7 +6,7 @@ function Cards(props) {
    
         <div className='col-md-4 col-sm-6  '>
         <div class="card-group crd">
-            <div class="card" >
+            <div class="card cardcss" >
                 <div class="card-body">
                 <h5 class="card-title title">FeedBack</h5>
                 <p className="card-text body">{props.review}</p>
